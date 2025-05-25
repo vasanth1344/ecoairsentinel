@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- Hero Section with Animated Icon -->
+<section class="text-center py-16 px-6 bg-white rounded-2xl shadow-lg transition hover:shadow-2xl">
+  <!-- Animated Icon (wind symbol using SVG) -->
+  <div class="mx-auto mb-6 w-16 h-16 animate-bounce">
+    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3b82f6" class="w-16 h-16 mx-auto">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h13a3 3 0 100-6h-1m1 6a3 3 0 110 6h-2m-3-6H3m0 0h13a3 3 0 110 6H6" />
+    </svg>
+  </div>
+
+  <!-- Project Title -->
+  <h2 class="text-4xl font-extrabold text-blue-600 mb-4 animate-pulse">Air Quality Intelligence System</h2>
+
+  <!-- Project Description -->
+  <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto animate-fade-in">
+    This project is a smart air quality monitoring system using AI models. We forecast pollution levels (PM2.5 and PM10),
+    compare data between multiple sensor nodes, and use explainable AI (SHAP) to understand environmental influences like
+    temperature and humidity. Explore the Node 1, Node 2, and Combined views for visual insights and model explanations.
+  </p>
+</section>
+
+{% endblock %}

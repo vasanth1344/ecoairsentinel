@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Combined Outputs{% endblock %}
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">Combined Forecast and Comparison</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <h2 class="font-semibold">Forecast Chart</h2>
+    <img src="{{ url_for('static', filename='forecast.png') }}" class="rounded shadow">
+  </div>
+  <div>
+    <h2 class="font-semibold">PM2.5 Comparison</h2>
+    <img src="{{ url_for('static', filename='compare_pm25.png') }}" class="rounded shadow">
+  </div>
+  <div>
+    <h2 class="font-semibold">PM10 Comparison</h2>
+    <img src="{{ url_for('static', filename='compare_pm10.png') }}" class="rounded shadow">
+  </div>
+  <div>
+    <h2 class="font-semibold">PM Contributions</h2>
+    <img src="{{ url_for('static', filename='contribution_pie.png') }}" class="rounded shadow">
+  </div>
+</div>
+{% endblock %}

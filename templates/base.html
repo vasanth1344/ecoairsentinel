@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Air Quality Dashboard{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.12.16/dist/framer-motion.umd.js"></script>
+
+  <!-- Custom CSS Animations -->
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-green-100 min-h-screen font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600 animate-bounce">Air Quality Dashboard</h1>
+      <nav class="space-x-6 text-blue-600 font-medium">
+        <a href="/" class="hover:underline">Home</a>
+        <a href="/node1" class="hover:underline">Node 1</a>
+        <a href="/node2" class="hover:underline">Node 2</a>
+        <a href="/combined" class="hover:underline">Combined</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Block -->
+  <main class="max-w-6xl mx-auto px-4 py-10 space-y-10">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center p-4 text-sm text-gray-500 mt-10">
+    &copy; {{ now.year }} Air Quality Dashboard by Vasanth Reddy
+  </footer>
+
+</body>
+</html>
