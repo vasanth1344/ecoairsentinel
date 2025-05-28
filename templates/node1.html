@@ -2,30 +2,49 @@
 {% block title %}Node 1 Results{% endblock %}
 {% block content %}
 <h1 class="text-2xl font-bold mb-4">Node 1 Analysis</h1>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- SHAP Summary PM2.5 -->
   <div>
     <h2 class="font-semibold">SHAP Summary PM2.5</h2>
     <img src="{{ url_for('static', filename='shap_summary_pm25_node1.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">This SHAP summary plot explains how various features (like temperature and humidity) influence the PM2.5 predictions made by the model at Node 1.</p>
   </div>
+
+  <!-- SHAP Summary PM10 -->
   <div>
     <h2 class="font-semibold">SHAP Summary PM10</h2>
     <img src="{{ url_for('static', filename='shap_summary_pm10_node1.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">This summary plot shows the impact of each input feature on the PM10 predictions for Node 1, helping identify key environmental contributors.</p>
   </div>
+
+  <!-- PM2.5 vs Temperature -->
   <div>
     <h2 class="font-semibold">PM2.5 vs Temperature</h2>
     <img src="{{ url_for('static', filename='shap_depend_pm25_temperature_node1.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">This SHAP dependence plot shows how temperature variations influence PM2.5 levels, revealing trends in pollution with respect to temperature changes.</p>
   </div>
+
+  <!-- PM10 vs Temperature -->
   <div>
     <h2 class="font-semibold">PM10 vs Temperature</h2>
     <img src="{{ url_for('static', filename='shap_depend_pm10_temperature_node1.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">This plot highlights the relationship between temperature and PM10, showing how the model interprets temperature's role in predicting air quality.</p>
   </div>
+
+  <!-- PM2.5 vs Humidity -->
   <div>
     <h2 class="font-semibold">PM2.5 vs Humidity</h2>
     <img src="{{ url_for('static', filename='shap_depend_pm25_humidity_node1.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">This SHAP dependence plot visualizes how changes in humidity affect the PM2.5 values, giving insight into moisture's role in air quality.</p>
   </div>
+
+  <!-- PM10 vs Humidity -->
   <div>
     <h2 class="font-semibold">PM10 vs Humidity</h2>
     <img src="{{ url_for('static', filename='shap_depend_pm10_humidity_node1.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">This graph demonstrates how humidity levels influence PM10 concentrations, as interpreted by the SHAP model at Node 1.</p>
   </div>
 </div>
+
 {% endblock %}
