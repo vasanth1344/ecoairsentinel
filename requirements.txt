@@ -14,3 +14,24 @@ requests
 tensorflow
 apscheduler
 gunicorn
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+xgboost
+shap
+matplotlib
+seaborn
+joblib
+pydantic
+python-multipart
+requests
+tensorflow
+apscheduler
+<<<<<<< HEAD
+gunicorn
+=======
+gunicorn
+flask
+>>>>>>> 9e4d708b0e811f2985091fb611d9d98324aa9174
