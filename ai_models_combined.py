@@ -1,5 +1,4 @@
 import os
-import sqlite3
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,15 +13,13 @@ from sklearn.model_selection import train_test_split
 # Ensure static folder exists
 os.makedirs("static", exist_ok=True)
 
-# Load data from database
-def load_data_from_db():
-    conn = sqlite3.connect("new.db")
-    node1 = pd.read_sql_query("SELECT * FROM node1_sensor_readings", conn)
-    node2 = pd.read_sql_query("SELECT * FROM node2_sensor_readings", conn)
-    conn.close()
+# Load data from CSV
+def load_data_from_csv():
+    node1 = pd.read_csv("node1.csv")
+    node2 = pd.read_csv("node2.csv")
     return node1, node2
 
-node1, node2 = load_data_from_db()
+node1, node2 = load_data_from_csv()
 
 # Align timestamps
 common_timestamps = set(node1["timestamp"]) & set(node2["timestamp"])
