@@ -1,23 +1,45 @@
 {% extends "base.html" %}
 {% block title %}Combined Outputs{% endblock %}
 {% block content %}
+
 <h1 class="text-2xl font-bold mb-4">Combined Forecast and Comparison</h1>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- Forecast Chart -->
   <div>
     <h2 class="font-semibold">Forecast Chart</h2>
-    <img src="{{ url_for('static', filename='forecast.png') }}" class="rounded shadow">
+    <img src="{{ url_for('static', filename='forecast_3day.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">
+      This chart presents a 3-day forecast of PM2.5 and PM10 levels using an LSTM model. It helps anticipate pollution trends at both nodes for better environmental planning.
+    </p>
   </div>
+
+  <!-- PM2.5 Comparison -->
   <div>
     <h2 class="font-semibold">PM2.5 Comparison</h2>
     <img src="{{ url_for('static', filename='compare_pm25.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">
+      This graph compares PM2.5 values between Node 1 and Node 2, revealing how fine particulate pollution differs between the campus lab and the village environment.
+    </p>
   </div>
+
+  <!-- PM10 Comparison -->
   <div>
     <h2 class="font-semibold">PM10 Comparison</h2>
     <img src="{{ url_for('static', filename='compare_pm10.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">
+      This plot compares PM10 levels across both nodes, helping assess how coarser particle pollution varies between the two deployment locations.
+    </p>
   </div>
+
+  <!-- PM Contributions Pie Chart -->
   <div>
     <h2 class="font-semibold">PM Contributions</h2>
     <img src="{{ url_for('static', filename='contribution_pie.png') }}" class="rounded shadow">
+    <p class="text-sm text-gray-600 mt-2 italic">
+      The pie chart illustrates the contribution of each node to the overall PM2.5 and PM10 values, offering a summary view of which location is more polluted.
+    </p>
   </div>
 </div>
+
 {% endblock %}
